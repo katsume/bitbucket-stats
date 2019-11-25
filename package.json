@@ -13,9 +13,16 @@
     "webpack-stream": "^5.2.1"
   },
   "scripts": {
-    "start": "./start.sh",
+    "start": "node .",
+    "watch": "./start.sh",
     "clean": "gulp clean",
     "build": "NODE_ENV=production gulp build"
   },
-  "dependencies": {}
+  "dependencies": {
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "express-session": "^1.17.0",
+    "node-sass-middleware": "^0.11.0",
+    "request": "^2.88.0"
+  }
 }
