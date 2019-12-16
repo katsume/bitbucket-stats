@@ -1,17 +1,37 @@
 <template>
-	<div v-if="user">
-		<p>{{ user.username }}</p>
-		<div v-if="teams.length">
+	<div>
+		<nav class="navbar bg-primary">
+			<span class="navbar-brand">&nbsp;</span>
+		</nav>
+		<div
+			v-if="user"
+			class="container py-4">
+
+			<div class="row align-items-center">
+				<div class="col-2 text-right">
+					<img :src="user.links.avatar.href" alt="" class="img-fluid w-75">
+				</div>
+				<div class="col-10">
+					<h1 class="">{{ user.display_name }}</h1>
+					<p class="text-muted">{{ user.username }}</p>
+				</div>
+			</div>
+		</div>
+
+		<div
+			v-if="teams.length"
+			class="">
 			<div
 				v-for="(team, i) in teams"
 				:key="i"
 				class="">
 				<Team
-					:username="user.username"
-					:teamname="team.username"
+					:user-id="user.uuid"
+					:team="team"
 				></Team>
 			</div>
 		</div>
+
 	</div>
 </template>
 

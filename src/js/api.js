@@ -43,6 +43,15 @@ const _diffstat= async (username, repoSlug, spec)=>{
 		res= await Client.getInstance().get(`/repositories/${username}/${repoSlug}/diffstat/${spec}?page=${page++}`);
 		buf= buf.concat(res.data.values);
 	} while(res.data.next);
+
+	if(!buf.length){
+		return {
+			files: [],
+			linesAdded: 0,
+			linesRemoved: 0
+		}
+	}
+
 	return {
 		files: buf.map((file)=>{
 			return file.status==='removed' ? file.old.path : file.new.path;
@@ -104,7 +113,7 @@ export default {
 		do {
 			const res= await Client.getInstance().get(`/repositories/${username}?page=${page}`);
 			buf= buf.concat(res.data.values);
-			if(1||!res.data.next){
+			if(!res.data.next){
 				return buf;
 			}
 		} while(page++);
