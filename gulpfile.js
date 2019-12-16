@@ -105,8 +105,10 @@ gulp.task('ejs', ()=>{
 gulp.task('sass', ()=>{
 	return gulp.src(path.join(src, 'sass', '**', '*.scss'))
 		.pipe(sass({
-			outputStyle: (process.env.NODE_ENV==='production')?'compressed':'nested'
-		}))
+			outputStyle: (process.env.NODE_ENV==='production')?'compressed':'nested',
+			includePaths: [
+				path.resolve(__dirname, 'node_modules')
+			]		}))
 		.on('error', (err)=>{
 			console.error('Error', err.message);
 		})

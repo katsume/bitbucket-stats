@@ -22,7 +22,9 @@
     "build": "NODE_ENV=production gulp build"
   },
   "dependencies": {
+    "@iconify/iconify": "^1.0.3",
     "axios": "^0.19.0",
+    "bootstrap": "^4.4.1",
     "qs": "^6.9.1",
     "underscore": "^1.9.1",
     "vue": "^2.6.10",
