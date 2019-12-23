@@ -8,7 +8,7 @@
 			class="container py-4">
 
 			<div class="row align-items-center">
-				<div class="col-2 text-right">
+				<div class="col-2 text-center">
 					<img :src="user.links.avatar.href" alt="" class="img-fluid w-75">
 				</div>
 				<div class="col-10">

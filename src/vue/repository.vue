@@ -3,8 +3,8 @@
 		<td>{{ repositoryName }}</td>
 		<td>{{ commits.length }} commits</td>
 		<td>{{ files }} files</td>
-		<td>{{ linesAdded }} additions</td>
-		<td>{{ linesRemoved }} deletions</td>
+		<td>+ {{ linesAdded }}</td>
+		<td>- {{ linesRemoved }}</td>
 	</tr>
 </template>
 
